@@ -67,15 +67,15 @@
 	
 	$("#solve").click(function () {
 		$.ajax({
-			  url: "simplexTable/solution",
+			  url: "solution",
 			  type: "GET",
 			  dataType:'json',
 			  data: {
 				  table: readTable(),
 				  func: readFunc()
 				  },
-			  success: function() {
-				  location.href = 'simplexTable/solution';
+			  complete: function() {
+				  location.href = "solution";
 			  }
 		});
 	});
