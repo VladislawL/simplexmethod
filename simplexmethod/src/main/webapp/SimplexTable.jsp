@@ -60,6 +60,7 @@
 			  url: "simplexInput",
 			  type: "GET",
 			  success: function() {
+				  alert("success");
 				  location.href = 'simplexInput';
 			  }
 		});
@@ -67,15 +68,17 @@
 	
 	$("#solve").click(function () {
 		$.ajax({
-			  url: "simplexTable/solution",
+			  url: "solution",
 			  type: "GET",
 			  dataType:'json',
 			  data: {
 				  table: readTable(),
 				  func: readFunc()
 				  },
-			  success: function() {
-				  location.href = 'simplexTable/solution';
+			  success: function(data) {
+				  alert("success");
+				  console.log(data);
+				  location.href = 'solution';
 			  }
 		});
 	});

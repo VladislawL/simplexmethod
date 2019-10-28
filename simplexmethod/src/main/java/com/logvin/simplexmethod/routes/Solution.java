@@ -11,27 +11,29 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class SimplexMethodController
+ * Servlet implementation class Solution
  */
 
-@WebServlet("/simplexTable")
-public class SimplexMethodController extends HttpServlet {
+@WebServlet("/solution")
+public class Solution extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String defaultUrl = "/SimplexTable.jsp";
-	
+       
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String requestURI = request.getRequestURI();
-		String url = defaultUrl;
-		ServletContext context = getServletContext();
-		RequestDispatcher dispatcher = context.getRequestDispatcher(url);
-		dispatcher.forward(request, response);
+			String url;
+			url = "/solution.jsp";
+			String[] table = request.getParameterValues("table[]");
+			String[] function = request.getParameterValues("func[]");
+			for(String str : function) System.out.print(str + " ");
+			for(String str : table) System.out.print(str + " ");
+			System.out.println(request.getContextPath() + url);
+			response.sendRedirect(request.getContextPath() + url);
+			/*ServletContext context = getServletContext();
+			RequestDispatcher dispatcher = context.getRequestDispatcher(url);
+			dispatcher.forward(request, response);*/
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
-	
 }

@@ -16,13 +16,23 @@
 		<description></description>
 		<servlet-class>com.logvin.simplexmethod.routes.SimplexMethodController</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>Solution</servlet-name>
+		<display-name>Solution</display-name>
+		<description></description>
+		<servlet-class>com.logvin.simplexmethod.routes.Solution</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>Index</servlet-name>
 		<url-pattern>/simplexInput</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>SimplexMethodController</servlet-name>
-		<url-pattern>/simplexTable/*</url-pattern>
+		<url-pattern>/simplexTable</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Solution</servlet-name>
+		<url-pattern>/solution</url-pattern>
 	</servlet-mapping>
   
 	<!-- define the welcome files -->
