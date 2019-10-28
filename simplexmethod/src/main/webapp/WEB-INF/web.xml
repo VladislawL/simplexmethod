@@ -1,7 +1,7 @@
 <!DOCTYPE web-app PUBLIC
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
-
+<element>
 <web-app>
 	<display-name>Archetype Created Web Application</display-name>
 	<servlet>
@@ -10,9 +10,19 @@
 		<description></description>
 		<servlet-class>com.logvin.simplexmethod.routes.Index</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>SimplexMethodController</servlet-name>
+		<display-name>SimplexMethodController</display-name>
+		<description></description>
+		<servlet-class>com.logvin.simplexmethod.routes.SimplexMethodController</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>Index</servlet-name>
-		<url-pattern>/Index</url-pattern>
+		<url-pattern>/simplexInput</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SimplexMethodController</servlet-name>
+		<url-pattern>/simplexTable/*</url-pattern>
 	</servlet-mapping>
   
 	<!-- define the welcome files -->
@@ -21,3 +31,4 @@
     	<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
 </web-app>
+</element>
