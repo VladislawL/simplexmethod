@@ -10,13 +10,20 @@ html {
 
 body {
     height: inherit;
+    background-color: #fecc6f;
 }
 
 .list {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 10%;
+}
+
+.input {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 button {
@@ -52,4 +59,16 @@ button:hover:active {
     padding: 0px;
     font-size: 1em;
     -webkit-appearance: none;
+}
+
+.blackboard {
+	background-color: #425a5a;
+	border: 5px solid #523620;
+	border-radius: 3px;
+	
+	padding: 25px;
+}
+
+#table {
+	color: white;
 }

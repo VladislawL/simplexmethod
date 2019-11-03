@@ -13,40 +13,44 @@
         <table style="width: 100%; height: 100%">
             <tr align="center">
                 <td valign="center">
-                    <table id="table" style="margin-bottom: 2em">
-						<%
-							for(int i = 0; i < n; i++){
-								out.println("<tr> ");
-								for(int j = 0; j < m; j++) {
-									out.println("<td><input id=\"" + i+j + "\" type=\"text\" class=\"form-control input\"></td>");
-								}
-								out.println("<td>" +  
-								          		"<select name='condition" + i + "'>" +
-								            		"<option value='1'>&le;</option>" +
-								            		"<option value='-1'>&ge;</option>" +
-								          		"</select>" +
-								        	"</td>" +
-								        	"<td><input id=\"b" + i + "\" type=\"text\" class=\"form-control input\"></td>" +
-								          	"</tr>");
-							}
-						%>
-                    </table>
-                    <table id="function" style="margin-bottom: 2em">
-                    	<tr>
-                    	<%
-							for(int i = 0; i < m; i++) {
-								out.println("<td><input id=\"f" + i + "\" type=\"text\" class=\"form-control input\"></td>");
-							}
-                    	out.println("<td>" +  
-				          		"<select name='maxmin'>" +
-				            		"<option value='1'>max</option>" +
-				            		"<option value='-1'>min</option>" +
-				          		"</select>" +
-				        	"</td>");
-						%>
-						</tr>
-                    </table>
-                    <button id="solve">Решить</button>
+                	<form method="GET" action="solution">
+                		<div class="blackboard">
+		                    <table id="table" style="margin-bottom: 2em">
+								<%
+									for(int i = 0; i < n; i++){
+										out.println("<tr> ");
+										for(int j = 0; j < m; j++) {
+											out.println("<td><input name=\"" + i+j + "\" type=\"text\" class=\"form-control input\"></td>");
+										}
+										out.println("<td>" +  
+										          		"<select name='condition" + i + "'>" +
+										            		"<option value='1'>&le;</option>" +
+										            		"<option value='-1'>&ge;</option>" +
+										          		"</select>" +
+										        	"</td>" +
+										        	"<td><input name=\"b" + i + "\" type=\"text\" class=\"form-control input\"></td>" +
+										          	"</tr>");
+									}
+								%>
+		                    </table>
+		                    <table id="function" style="margin-bottom: 2em">
+		                    	<tr>
+		                    	<%
+									for(int i = 0; i < m; i++) {
+										out.println("<td><input name=\"f" + i + "\" type=\"text\" class=\"form-control input\"></td>");
+									}
+		                    	out.println("<td>" +  
+						          		"<select name='maxmin'>" +
+						            		"<option value='1'>max</option>" +
+						            		"<option value='-1'>min</option>" +
+						          		"</select>" +
+						        	"</td>");
+								%>
+								</tr>
+		                    </table>
+	                    </div>
+	                    <button>Решить</button>
+                    </form>
                 </td>
             </tr>
         </table>
@@ -65,7 +69,7 @@
 		});
 	});
 	
-	$("#solve").click(function () {
+	/*$("#solve").click(function () {
 		$.ajax({
 			  url: "solution",
 			  type: "GET",
@@ -114,6 +118,6 @@
 		});
 		console.log(func);
 		return func;
-	}
+	}*/
 </script>
 </html>

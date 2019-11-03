@@ -40,7 +40,7 @@ public class SimplexTable {
 		newTable[resolvingRow][resolvingCol] = 1;
 		basisVariables.set(resolvingRow, resolvingCol);
 		
-		return new SimplexTable(newTable, type, basisVariables);
+		return new SimplexTable(newTable, type, new ArrayList<>(basisVariables));
 		
 	}
 	
@@ -83,6 +83,14 @@ public class SimplexTable {
 			}
 		}
 		return minIndex;
+	}
+	
+	public double[][] getTable() {
+		return table;
+	}
+
+	public List<Integer> getBasisVariables() {
+		return basisVariables;
 	}
 
 	@Override
