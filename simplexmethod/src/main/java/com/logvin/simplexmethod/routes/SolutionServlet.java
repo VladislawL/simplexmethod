@@ -18,7 +18,7 @@ import com.logvin.simplexmethod.algorithm.SimplexTable;
  * Servlet implementation class SolutionServlet
  */
 
-@WebServlet("/solution")
+//@WebServlet("/solution")
 public class SolutionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	

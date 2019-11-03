@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
  * Servlet implementation class SimplexMethodController
  */
 
-@WebServlet("/simplexTable")
+//@WebServlet("/simplexTable")
 public class SimplexMethodController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String defaultUrl = "/SimplexTable.jsp";

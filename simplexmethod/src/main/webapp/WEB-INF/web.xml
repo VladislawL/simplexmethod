@@ -1,25 +1,20 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
-<element>
-<web-app>
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+                        http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
 	<display-name>Archetype Created Web Application</display-name>
+	<description>Simplex method implementation</description>
 	<servlet>
 		<servlet-name>Index</servlet-name>
-		<display-name>Index</display-name>
-		<description></description>
 		<servlet-class>com.logvin.simplexmethod.routes.Index</servlet-class>
 	</servlet>
 	<servlet>
 		<servlet-name>SimplexMethodController</servlet-name>
-		<display-name>SimplexMethodController</display-name>
-		<description></description>
 		<servlet-class>com.logvin.simplexmethod.routes.SimplexMethodController</servlet-class>
 	</servlet>
 	<servlet>
 		<servlet-name>SolutionServlet</servlet-name>
-		<display-name>SolutionServlet</display-name>
-		<description></description>
 		<servlet-class>com.logvin.simplexmethod.routes.SolutionServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
@@ -34,6 +29,16 @@
 		<servlet-name>SolutionServlet</servlet-name>
 		<url-pattern>/solution</url-pattern>
 	</servlet-mapping>
+	
+		    <!-- Enable the custom error pages -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/errorPage.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/errorPage.jsp</location>
+    </error-page>
   
 	<!-- define the welcome files -->
 	<welcome-file-list>
@@ -41,14 +46,4 @@
     	<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
 	
-	    <!-- Enable the custom error pages -->
-    <error-page>
-        <error-code>404</error-code>
-        <location>errorPage.jsp</location>
-    </error-page>
-    <error-page>
-        <exception-type>java.lang.Throwable</exception-type>
-        <location>errorPage.jsp</location>
-    </error-page>
 </web-app>
-</element>
